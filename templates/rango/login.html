@@ -1,0 +1,22 @@
+{% extends 'rango/base.html' %}
+
+{% block title %}Registro Bar{% endblock %}
+
+{% block body_block %}
+        
+   <div class="panel panel-primary">
+        <div class="panel-heading">
+        		<h3>Formulario de login</h3>
+	</div>
+   </div>
+        <form id="login_form" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            Usuario: <input type="text" name="username" value="" size="30" />
+            <br />
+            Contraseña: <input type="password" name="password" value="" size="30" />
+            <br />
+
+            <input type="submit" value="Login" />
+        </form>
+
+{% endblock %}

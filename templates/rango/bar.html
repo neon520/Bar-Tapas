@@ -1,0 +1,38 @@
+{% extends 'rango/base.html' %}
+{% load easy_maps_tags %}
+{% block title %}{{ Bar_nombre }}{% endblock %}
+
+{% block body_block %}
+
+
+        {% if bar %}    
+
+			<div class="panel panel-primary">
+			      <div class="panel-heading">
+				    <h3>{{ Bar_nombre }}</h3>
+	      			</div>
+	    		</div>
+    <div class="col-xs-12 col-sm-6 placeholder"> <!-- Quitar si queremos ocupar toda la pantalla-->
+		    {% if tapas %}
+		    <ul class="list-group">
+		        {% for tapa in tapas %}
+		            <li class="list-group-item">
+				{{ tapa.nombre }}<p style="float:right;" >Votos: {{ tapa.votos }}</p>
+			    </li>
+		        {% endfor %}
+		    </ul>
+		    {% else %}
+		        <strong>Este bar no tiene Tapas.</strong>
+		    {% endif %}
+     </div>
+		    {% easy_map bar_direccion 300 400 %}
+        {% else %}
+            	 El bar {{ bar_nombre }} no existe
+        {% endif %}
+
+        {% if user.is_authenticated %}
+ 		<form method="get" action="{% url 'add_tapa' bar_nombre_slug=bar.slug %}">
+		<button type="submit">Añadir Tapa</button>
+		</form>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'rango/base.html' %}<!--  Impide que se vea la gráfica -->
+
+{% load staticfiles %}
+
+
+{% block title %}Página principal{% endblock %}
+
+
+{% block body_block %}
+<!--
+    	    <div class="page-header">
+		{% if user.is_authenticated %}
+    	            <h1>¡Bienvenido a Bares & Tapas {{ user.username }}!</h1>
+		{% else %}
+		    <h1>¡Bienvenido a Bares & Tapas!</h1>
+    	        {% endif %}
+  	    </div>
+-->
+
+	    <div class="panel panel-primary">
+		<div class="panel-heading">
+		    <h3>Bares</h3>
+	    	</div>
+	    </div>
+            <div class="col-xs-12 col-sm-6 placeholder"> <!-- Quitar si queremos ocupar toda la pantalla-->
+        		{% if bares %}
+            		    <ul class="list-group">
+		                {% for bar in bares %}
+			                <li class="list-group-item">
+						<a href="{% url 'bar' bar_nombre_slug=bar.slug %}">{{ bar.nombre }}</a><p style="float:right;" >Visitas: {{ bar.num_visitas }}</p>
+					</li>
+        	        	{% endfor %}
+		            </ul>
+        		{% else %}
+        		    <strong>No hay bares.</strong>
+        		{% endif %}
+
+
+
+            </div>
+		<div class="col-xs-12 col-sm-6 placeholder" id="container" style="height: 300px"></div><!-- Gráfica de visitas -->
+
+          </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'rango/base.html' %}
+
+{% block title %}Registro Bar{% endblock %}
+
+{% block body_block %}
+   	<div class="panel panel-primary">
+       		<div class="panel-heading">
+        		<h3>Nuevo Bar</h3>
+		</div>
+	</div>
+
+        <form id="bar_form" method="post" action="{% url 'add_bar' %}">
+
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+
+            {% for field in form.visible_fields %}
+                {{ field.help_text }}
+                {{ field }}
+                {{ field.errors }}
+		<p></p>
+            {% endfor %}
+
+            <input type="submit" name="submit" value="Añadir" />
+        </form>
+{% endblock %}

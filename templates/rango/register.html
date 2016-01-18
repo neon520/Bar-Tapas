@@ -1,0 +1,37 @@
+{% extends 'rango/base.html' %}
+
+{% block title %}Registro Bar{% endblock %}
+
+{% block body_block %}
+       {% if registered %}
+
+   <div class="panel panel-primary">
+        <div class="panel-heading">
+        		<h3>¡Bienvenido a Bar & Tapas!</h3>
+	</div>
+   </div>
+        		<a href="/rango/">Volver a la página principal.</a><br />
+        {% else %}
+
+   <div class="panel panel-primary">
+        <div class="panel-heading">
+        		<h3>Formulario de registro</h3>
+	</div>
+   </div>
+
+        <form id="user_form" method="post" action="/rango/register/"
+                enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <!-- Display each form. The as_p method wraps each element in a paragraph
+                 (<p>) element. This ensures each element appears on a new line,
+                 making everything look neater. -->
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+
+            <!-- Provide a button to click to submit the form. -->
+            <input type="submit" name="submit" value="Registrarse" />
+        </form>
+        {% endif %}
+{% endblock %}
