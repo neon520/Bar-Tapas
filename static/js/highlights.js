@@ -1,7 +1,7 @@
 $(document).ready(function(){  # de  jquery, se ejecuta cuando se carga la página
   alert("hola")
   $.ajax({
-		url: "/rango/reclama_datos",
+		url: "/reclama_datos",
 		type: 'get',
 		success: function(datos) {
 			Visualiza_datos(datos);

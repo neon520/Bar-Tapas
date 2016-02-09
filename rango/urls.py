@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^login/$', views.user_login, name='login'),
     url(r'^logout/$', views.user_logout, name='logout'),
     url(r'^reclama_datos/$', views.reclama_datos, name='reclama_datos'),
+    url(r'^like_tapa/$', views.like_tapa, name='like_tapa'),
     )  # New!

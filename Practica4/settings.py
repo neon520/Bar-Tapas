@@ -21,7 +21,7 @@ STATIC_ROOT = 'staticfiles'
 STATIC_PATH = os.path.join(BASE_DIR,'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Absolute path to the media directory
-LOGIN_URL = '/rango/login/'
+LOGIN_URL = '/login/'
 
 EASY_MAPS_CENTER = (-41.3, 32)
 
@@ -37,7 +37,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
-ROOT_URLCONF = 'Practica4.urls'
 # Application definition
 
 INSTALLED_APPS = (
@@ -75,7 +74,6 @@ Comienzo de lo mío
 
 Añadiendo templates por mi parte, AQUÍ LOS INTRODUZCO, ASÍ NO TOCO LA ESTRUCTURA PRINCIPAL
 """
-
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -135,10 +133,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
-
-
 
 # Punto 9, dando autorizaciones:
 
@@ -148,8 +142,5 @@ PASSWORD_HASHERS = (
 'django.contrib.auth.hashers.PBKDF2PasswordHasher',
 'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
 )
-
-
-
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

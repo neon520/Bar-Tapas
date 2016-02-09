@@ -191,7 +191,7 @@ def user_login(request):
 				# If the account is valid and active, we can log the user in.
 				# We'll send the user back to the homepage.
 				login(request, user)
-				return HttpResponseRedirect('/')
+				return HttpResponseRedirect('/rango/')
 			else:
 				# An inactive account was used - no logging in!
 				return HttpResponse("Your Rango account is disabled.")
@@ -215,7 +215,7 @@ def user_logout(request):
 	logout(request)
 
 	# Take the user back to the homepage.
-	return HttpResponseRedirect('/')
+	return HttpResponseRedirect('/rango/')
 
 
 
@@ -229,3 +229,19 @@ def reclama_datos (request):
 		datos[0].append(bar.nombre)
 		datos[1].append(bar.num_visitas)
 	return JsonResponse(datos, safe=False)
+
+
+@login_required
+def like_tapa(request):
+
+	tapa = None
+	if request.method == 'GET':
+		tapa_id = request.GET['tapa_id']
+
+	if tapa_id:
+		tapa = Tapa.objects.get(id=int(tapa_id))
+		if tapa:
+			tapa.votos = tapa.votos + 1
+			tapa.save()
+
+	return HttpResponse(tapa.votos)

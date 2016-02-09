@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $.ajax({
-    url: "/rango/reclama_datos",
+    url: "/reclama_datos",
     type: 'get',
     success: function(datos) {
       Visualiza_datos(datos);

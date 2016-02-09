@@ -17,7 +17,13 @@
 		    <ul class="list-group">
 		        {% for tapa in tapas %}
 		            <li class="list-group-item">
-				{{ tapa.nombre }}<p style="float:right;" >Votos: {{ tapa.votos }}</p>
+				{{ tapa.nombre }}<p id="like_count{{tapa.id}}">Votos: {{ tapa.votos }} {% if user.is_authenticated %}
+        												<button id="likes{{tapa.id}}" data-tapa="{{ tapa.id }}" class="btn btn-primary" type="button">
+      													<span class="glyphicon glyphicon-thumbs-up"></span>
+        												Me gusta
+        												</button>
+												{% endif %}
+						</p>
 			    </li>
 		        {% endfor %}
 		    </ul>
