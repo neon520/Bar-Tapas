@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...) 
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import django
 
@@ -36,7 +36,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
-
+ROOT_URLCONF = 'Practica4.urls'
 # Application definition
 
 INSTALLED_APPS = (
