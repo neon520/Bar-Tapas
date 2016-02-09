@@ -1,1 +1,1 @@
-web: gunicorn DjangoProyect.wsgi --log-file -
+web: gunicorn Practica4.wsgi --log-file -
