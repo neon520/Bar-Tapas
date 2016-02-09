@@ -1,3 +1,4 @@
 *.pyc
 staticfiles
 staticfiles/*
+Practica4/__py*
