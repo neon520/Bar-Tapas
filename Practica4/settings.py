@@ -31,9 +31,9 @@ EASY_MAPS_CENTER = (-41.3, 32)
 SECRET_KEY = '-0xo8+omgs=^8b*s45(uo%(ar0825)8o&5#ee47)s4l*ub3h^m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
