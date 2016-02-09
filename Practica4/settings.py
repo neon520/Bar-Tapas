@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 import django
 
+STATIC_URL = '/static/'
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')     #Añadiendo línea del path de los templates
 STATIC_PATH = os.path.join(BASE_DIR,'static')
@@ -73,6 +74,7 @@ Comienzo de lo mío
 
 Añadiendo templates por mi parte, AQUÍ LOS INTRODUZCO, ASÍ NO TOCO LA ESTRUCTURA PRINCIPAL
 """
+
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -135,7 +137,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'
 
 
 # Punto 9, dando autorizaciones:
