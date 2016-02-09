@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/rango/">Bar & Tapas</a>
+          <a class="navbar-brand" href="/">Bar & Tapas</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -47,7 +47,7 @@
 	
                     {% if user.is_authenticated %}
 			<li><a href="{% url 'index' %}">{{user.username}}</a></li>
-                        <li><a href="{% url 'logout' %}?next=/rango/">Logout</a></li>
+                        <li><a href="{% url 'logout' %}?next=/">Logout</a></li>
                         <li><a href="{% url 'add_bar' %}">Nuevo Bar</a></li>
                     {% else %}
 			<li><a href="{% url 'index' %}">Página principal</a></li>
