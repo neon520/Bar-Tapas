@@ -9,8 +9,8 @@ You can see the final result here in [Heroku](http://baresytapas.herokuapp.com/)
 ##Tutorial
 First of all, I have put, from settings.py,
 
-  DEBUG=False
-  ALLOWED_HOSTS=["*"]
+    DEBUG=False
+    ALLOWED_HOSTS=["*"]
 
 After this, I continue doing the previous mentioned [tutorial](https://devcenter.heroku.com/articles/django-assets).
 
