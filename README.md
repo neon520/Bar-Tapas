@@ -14,9 +14,9 @@ First of all, I have put, from settings.py,
 
 After this, I continue doing the previous mentioned [tutorial](https://devcenter.heroku.com/articles/django-assets).
 
-You have to do it until the __Collectstatic during builds__ part.
+You have to do it until the _Collectstatic during builds_ part.
 
-After that you only need to conect your Repository to Heroku and __Enable Automatic Deploy__.
+After that you only need to conect your Repository to Heroku and _Enable Automatic Deploy_.
 
 ##Problems
 I don't know why but highcharts node doesn't load if I use https conection. Fixing it in next version.
